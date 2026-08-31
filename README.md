@@ -69,106 +69,84 @@ Definitions for every number type used across the problem set below.
 
 # 1. Number Property Checks
 
-| #  | Problem                | Java Approach                                                             | Difficulty |
-| -- | ---------------------- | ------------------------------------------------------------------------- | ---------- |
-| 1  | Perfect Number         | Sum proper divisors up to `√n` and compare with `n`                       | 🟢 Easy    |
-| 2  | Strong Number          | Calculate factorial of each digit and compare the sum with `n`            | 🟢 Easy    |
-| 3  | Armstrong Number       | Calculate `Math.pow(digit, digitCount)` for every digit                   | 🟢 Easy    |
-| 4  | Automorphic Number     | Check whether `String.valueOf(n * n)` ends with `String.valueOf(n)`       | 🟢 Easy    |
-| 5  | Harshad (Niven) Number | Check whether `n % digitSum == 0`                                         | 🟢 Easy    |
-| 6  | Neon Number            | Calculate digit sum of `n * n` and compare with `n`                       | 🟢 Easy    |
-| 7  | Sunny Number           | Check whether `n + 1` is a perfect square                                 | 🟢 Easy    |
-| 8  | Spy Number             | Compare the sum and product of digits                                     | 🟢 Easy    |
-| 9  | Duck Number            | Convert to String and check whether it contains `0` after the first digit | 🟢 Easy    |
-| 10 | Fascinating Number     | Concatenate `n`, `2n`, and `3n`, then verify digits `1–9`                 | 🟡 Medium  |
+| # | Problem | Java Approach | Difficulty |
+|---:|---|---|---|
+| 1 | Perfect Number | Sum proper divisors up to `√n` and compare with `n` | 🟢 Easy |
+| 2 | Armstrong Number | Calculate `Math.pow(digit, digitCount)` for every digit | 🟢 Easy |
+| 3 | Strong Number | Calculate factorial of each digit and compare the sum with `n` | 🟢 Easy |
+| 4 | Automorphic Number | Check whether the square of a number ends with the number itself | 🟢 Easy |
+| 5 | Harshad Number | Check whether `n % digitSum == 0` | 🟢 Easy |
+| 6 | Kaprekar Number | Split the square into parts and check whether their sum equals `n` | 🟡 Medium |
+| 7 | Disarium Number | Check whether the sum of powered digits equals the original number | 🟡 Medium |
+| 8 | Happy Number | Repeatedly sum squared digits and detect whether the process reaches `1` | 🟡 Medium |
+| 9 | Smith Number | Compare the digit sum of the number with the digit sum of its prime factors | 🟡 Medium |
+| 10 | Keith Number | Generate the Keith sequence and check whether the number reappears | 🔴 Hard |
 
----
+# 2. More Number Properties
 
-# 2. Range-Based Generators
-
-| #  | Problem                       | Java Approach                                                | Difficulty |
-| -- | ----------------------------- | ------------------------------------------------------------ | ---------- |
-| 11 | Armstrong Numbers in a Range  | Apply the Armstrong check to every number in the range       | 🟢 Easy    |
-| 12 | Perfect Numbers in a Range    | Apply the perfect-number method to every value               | 🟡 Medium  |
-| 13 | Strong Numbers in a Range     | Check the factorial sum of digits for every number           | 🟢 Easy    |
-| 14 | Prime Numbers in a Range      | Trial division for each number or use a sieve                | 🟢 Easy    |
-| 15 | Twin Prime Pairs in a Range   | Find prime pairs where `p` and `p + 2` are prime             | 🟡 Medium  |
-| 16 | Emirp Numbers in a Range      | Check prime, reverse the number, check prime again           | 🟡 Medium  |
-| 17 | Palindromic Primes in a Range | Check whether the number is both prime and palindrome        | 🟡 Medium  |
-| 18 | Happy Numbers in a Range      | Use a loop with a `HashSet` to detect cycles                 | 🟡 Medium  |
-| 19 | Abundant Numbers in a Range   | Check whether the sum of proper divisors is greater than `n` | 🟢 Easy    |
-| 20 | Deficient Numbers in a Range  | Check whether the sum of proper divisors is less than `n`    | 🟢 Easy    |
-
----
+| # | Problem | Java Approach | Difficulty |
+|---:|---|---|---|
+| 11 | Neon Number | Calculate digit sum of `n * n` and compare with `n` | 🟢 Easy |
+| 12 | Spy Number | Compare the sum and product of digits | 🟢 Easy |
+| 13 | Duck Number | Convert to String and check whether it contains `0` after the first digit | 🟢 Easy |
+| 14 | Sunny Number | Check whether `n + 1` is a perfect square | 🟢 Easy |
+| 15 | Pronic Number | Check whether the number is the product of two consecutive integers | 🟢 Easy |
+| 16 | Palindrome Number | Check whether a number reads the same forward and backward | 🟢 Easy |
+| 17 | Reverse a Number | Reverse the digits of a given number without using String methods | 🟢 Easy |
+| 18 | Digital Root | Repeatedly calculate the sum of digits until a single digit remains | 🟢 Easy |
+| 19 | GCD of Two Numbers | Find the greatest common divisor of two numbers using Euclid's algorithm | 🟢 Easy |
+| 20 | LCM of Two Numbers | Find the least common multiple of two numbers using GCD | 🟢 Easy |
 
 # 3. Prime and Divisor Theory
 
-| #  | Problem                   | Java Approach                                                            | Difficulty |
-| -- | ------------------------- | ------------------------------------------------------------------------ | ---------- |
-| 21 | nth Prime Number          | Use the Sieve of Eratosthenes or incremental prime checking              | 🟡 Medium  |
-| 22 | Largest Prime Factor      | Divide the number by possible factors and store the largest prime factor | 🟢 Easy    |
-| 23 | Prime Factorization       | Trial division and store prime/exponent pairs                            | 🟢 Easy    |
-| 24 | Count Total Divisors      | Count divisor pairs up to `√n`                                           | 🟢 Easy    |
-| 25 | Sum of All Divisors       | Add divisor pairs while iterating up to `√n`                             | 🟢 Easy    |
-| 26 | GCD (Euclidean Algorithm) | `gcd(a, b) = gcd(b, a % b)`                                              | 🟢 Easy    |
-| 27 | LCM Using GCD             | `lcm(a, b) = Math.abs(a * b) / gcd(a, b)`                                | 🟢 Easy    |
-| 28 | Euler's Totient φ(n)      | Reduce `n` using each distinct prime factor                              | 🟡 Medium  |
-| 29 | Coprime Check             | Check whether `gcd(a, b) == 1`                                           | 🟢 Easy    |
-| 30 | Modular Inverse           | Use the Extended Euclidean Algorithm or Fermat's Little Theorem          | 🟡 Medium  |
-| 31 | `a^b mod m`               | Binary exponentiation with modulo operations                             | 🟡 Medium  |
-| 32 | Binary Exponentiation     | Square-and-multiply algorithm in `O(log n)`                              | 🟡 Medium  |
+| # | Problem | Java Approach | Difficulty |
+|---:|---|---|---|
+| 21 | Prime Factorization | Find all prime factors of a given number using trial division | 🟢 Easy |
+| 22 | Number of Divisors | Count divisor pairs up to `√n` | 🟢 Easy |
+| 23 | Sum of Divisors | Calculate the sum of all positive divisors of a number | 🟢 Easy |
+| 24 | Sieve of Eratosthenes | Find all prime numbers up to `N` using the Sieve algorithm | 🟡 Medium |
+| 25 | Segmented Sieve | Find prime numbers within a large range `[L, R]` | 🔴 Hard |
+| 26 | Twin Primes | Find all pairs of prime numbers differing by 2 in a given range | 🟡 Medium |
+| 27 | Goldbach Pairs | Find pairs of prime numbers whose sum equals a given even number | 🟡 Medium |
+| 28 | Kth Prime | Find the Kth prime number efficiently | 🟡 Medium |
+| 29 | Prime Gap | Find the largest gap between consecutive primes up to `N` | 🟡 Medium |
+| 30 | Fast Exponentiation | Calculate `a^b` efficiently using exponentiation by squaring | 🟡 Medium |
+
+# 4. Modular Arithmetic and Number Theory
+
+| # | Problem | Java Approach | Difficulty |
+|---:|---|---|---|
+| 31 | Modular Exponentiation | Calculate `(a^b) % m` efficiently for large values | 🟡 Medium |
+| 32 | Extended Euclidean Algorithm | Find `X` and `Y` satisfying `AX + BY = GCD(A,B)` | 🟡 Medium |
+| 33 | Modular Inverse | Find the multiplicative inverse of `A` modulo `M` | 🟡 Medium |
+| 34 | Euler Totient Function | Calculate the number of integers less than `N` that are coprime with `N` | 🟡 Medium |
+| 35 | Chinese Remainder Theorem | Solve a system of modular congruences | 🔴 Hard |
+| 36 | Trailing Zeros in Factorial | Count the trailing zeros in `N!` without calculating the factorial | 🟡 Medium |
+| 37 | Last Non-Zero Digit of Factorial | Find the last non-zero digit of `N!` | 🔴 Hard |
+| 38 | Binomial Coefficient | Calculate `C(N,K)` efficiently | 🟡 Medium |
+| 39 | Catalan Number | Calculate the Nth Catalan number | 🟡 Medium |
+| 40 | Fibonacci Matrix Exponentiation | Find the Nth Fibonacci number in `O(log N)` time | 🔴 Hard |
+
+# 5. Huge Number Operations
+
+| # | Problem | Java Approach | Difficulty |
+|---:|---|---|---|
+| 41 | Huge Number Addition | Add two numbers containing thousands of digits without `BigInteger` | 🟡 Medium |
+| 42 | Huge Number Multiplication | Multiply two arbitrarily large numbers without `BigInteger` | 🔴 Hard |
+| 43 | Huge Number Division | Divide two very large numbers represented as Strings | 🔴 Hard |
+| 44 | Huge Number Palindrome | Check whether a very large number is a palindrome | 🟢 Easy |
+| 45 | Huge Number Reverse | Reverse an arbitrarily large number represented as a String | 🟢 Easy |
+| 46 | Next Greater Number | Find the smallest greater number using exactly the same digits | 🟡 Medium |
+| 47 | Unique Digit Numbers | Count numbers from 1 to `N` that contain no repeated digits | 🔴 Hard |
+| 48 | Count Digit Occurrences | Count how many times a particular digit occurs from 1 to `N` | 🟡 Medium |
+| 49 | Sum of Digits in Range | Find the total sum of digits of all numbers from `L` to `R` | 🟡 Medium |
+| 50 | Digit DP | Count numbers satisfying digit-based conditions using Digit DP | 🔴 Hard |
 
 ---
 
-# 4. Factorials and Combinatorics
+## Java Concepts Used
 
-| #  | Problem                                    | Java Approach                                             | Difficulty |
-| -- | ------------------------------------------ | --------------------------------------------------------- | ---------- |
-| 33 | Large Factorials (`100!`, `500!`, `1000!`) | Use `java.math.BigInteger`                                | 🟡 Medium  |
-| 34 | Trailing Zeros in Factorial                | Count factors of 5 using `n/5 + n/25 + ...`               | 🟡 Medium  |
-| 35 | Binomial Coefficient (nCr)                 | Use factorials with `BigInteger` or Pascal's Triangle DP  | 🟡 Medium  |
-| 36 | Permutations (nPr)                         | Calculate `n! / (n-r)!` using `BigInteger` when required  | 🟢 Easy    |
-| 37 | Pascal's Triangle                          | Use a 2D array or combinatorial formula                   | 🟢 Easy    |
-| 38 | Catalan Numbers                            | Use `BigInteger` factorials or recurrence relation        | 🟡 Medium  |
-| 39 | Bell Numbers                               | Build Bell Triangle using a 2D array                      | 🔴 Hard    |
-| 40 | Stirling Numbers (Second Kind)             | Dynamic Programming: `S(n,k) = k × S(n-1,k) + S(n-1,k-1)` | 🔴 Hard    |
-
----
-
-# 5. Fibonacci Sequence
-
-| #  | Problem                               | Java Approach                                            | Difficulty |
-| -- | ------------------------------------- | -------------------------------------------------------- | ---------- |
-| 41 | Fibonacci Check                       | Check whether `5n² + 4` or `5n² − 4` is a perfect square | 🟢 Easy    |
-| 42 | nth Fibonacci (DP)                    | Use iterative bottom-up computation in `O(n)`            | 🟢 Easy    |
-| 43 | nth Fibonacci (Matrix Exponentiation) | Raise `[[1,1],[1,0]]` to the nth power in `O(log n)`     | 🔴 Hard    |
-| 44 | Sum of Fibonacci Numbers in a Range   | Generate values and accumulate, or use `F(n+2) − 1`      | 🟡 Medium  |
-
----
-
-# 6. Digit and Root Operations
-
-| #  | Problem                                   | Java Approach                                           | Difficulty |
-| -- | ----------------------------------------- | ------------------------------------------------------- | ---------- |
-| 45 | Digital Root                              | Repeatedly calculate digit sum or use `1 + (n - 1) % 9` | 🟢 Easy    |
-| 46 | Multiplicative Persistence                | Repeatedly multiply digits until a single digit remains | 🟢 Easy    |
-| 47 | Integer Square Root Without `Math.sqrt()` | Use Binary Search to find `⌊√n⌋`                        | 🟡 Medium  |
-| 48 | Cube Root Using Binary Search             | Binary search for `⌊∛n⌋`                                | 🟡 Medium  |
-
----
-
-# 7. Sieve Algorithms
-
-| #  | Problem               | Java Approach                                                          | Difficulty |
-| -- | --------------------- | ---------------------------------------------------------------------- | ---------- |
-| 49 | Sieve of Eratosthenes | Use a `boolean[]` array to mark multiples of prime numbers             | 🟡 Medium  |
-| 50 | Segmented Sieve       | Generate small primes first, then process blocks of the required range | 🔴 Hard    |
-
----
-
-# Java Concepts Used
-
-Throughout these 50 problems, you will practice:
+Throughout these 50 projects, you will practice:
 
 * Java Loops and Conditional Statements
 * Methods and Functions
@@ -189,7 +167,6 @@ Throughout these 50 problems, you will practice:
 
 ---
 
-
 ## 🎯 Who Is This Repository For?
 
 This collection is perfect for:
@@ -208,8 +185,9 @@ This collection is perfect for:
 
 ## 🚀 Goal
 
-Master **Java programming**, **number theory**, **mathematical algorithms**, **problem-solving techniques**, and **competitive programming concepts** by solving these 50 carefully selected problems.
+Master **Java programming**, **number theory**, **mathematical algorithms**, **problem-solving techniques**, and **competitive programming concepts** by solving these 50 carefully selected projects.
 
 Start from simple number-property checks and gradually progress toward advanced topics such as:
 
-**Prime Theory → Modular Arithmetic → Combinatorics → Dynamic Programming → Matrix Exponentiation → Segmented Sieve**
+**Prime Theory → Modular Arithmetic → Huge Number Operations → Dynamic Programming → Matrix Exponentiation → Digit DP**
+
